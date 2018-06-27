@@ -9,7 +9,7 @@ import './App.css';
 const particlesOptions = {
   particles: {
     number: {
-      value: 70,
+      value: 80,
       density: {
         enable: true,
         value_area: 800
@@ -30,16 +30,23 @@ class App extends Component {
     console.log(event.target.value);
   }
 
+  onButtonSubmit = () => {
+    console.log('click')
+  }
+
   render() {
     return (
       <div className="App">
         <Particles className='particles'
-              params={particlesOptions}             
-            />
+          params={particlesOptions}             
+        />
         <Navigation />
         <Logo />
         <Rank />
-        <ImageLinkForm onInputChange={this.onInputChange} />
+        <ImageLinkForm 
+          onInputChange={this.onInputChange} 
+          onButtonSubmit={this.onButtonSubmit}
+         />
       </div>
     );
   }
